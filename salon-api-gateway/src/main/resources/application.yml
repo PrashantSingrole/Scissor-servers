@@ -1,0 +1,48 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: salon-api-gateway
+
+  cloud:
+    gateway:
+      
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-origins: "*"
+            allowed-methods: "*"
+            allowed-headers: "*"
+    
+      routes:
+        - id: salon-user-service
+          uri: lb://salon-user-service
+          predicates:
+            - Path=/api/user/**
+
+        - id: salon-booking-service
+          uri: lb://salon-booking-service
+          predicates:
+            - Path=/api/book/**
+        
+        - id: salon-service
+          uri: lb://salon-service
+          predicates:
+            - Path=/api/salon/**
+            
+        - id: salon-payment-service
+          uri: lb://salon-payment-service
+          predicates:
+            - Path=/api/payment/**
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
