@@ -11,6 +11,8 @@
 	<groupId>com.salon.service</groupId>
 	<artifactId>salon-booking-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+				<packaging>jar</packaging>
+
 	<name>salon-booking-service</name>
 	<description>Salon Booking Service backend using Spring Boot</description>
 	<url/>

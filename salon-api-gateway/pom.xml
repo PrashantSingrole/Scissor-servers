@@ -11,6 +11,8 @@
 	<groupId>com.salon.service.apigateway</groupId>
 	<artifactId>salon-api-gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+			<packaging>jar</packaging>
+
 	<name>salon-api-gateway</name>
 	<description>Salon API gateway backend using Spring Boot</description>
 	<url/>

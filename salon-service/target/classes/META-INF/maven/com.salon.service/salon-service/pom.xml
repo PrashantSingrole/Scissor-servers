@@ -11,6 +11,8 @@
 	<groupId>com.salon.service</groupId>
 	<artifactId>salon-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+				<packaging>jar</packaging>
+
 	<name>salon-service</name>
 	<description>Salon Service backend using Spring Boot</description>
 	<url/>
