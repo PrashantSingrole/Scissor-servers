@@ -1,1 +1,2 @@
-rootDirectory="salon-api-gateway"
+[service]
+rootDirectory = "salon-api-gateway"
