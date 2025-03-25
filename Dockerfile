@@ -8,6 +8,6 @@ RUN chmod +x mvnw
 RUN ./mvnw dependency:go-offline
 COPY salon-api-gateway/src /app/src
 RUN ./mvnw clean package -DskipTests
-COPY target/salon-api-gateway-0.0.1-SNAPSHOT.jar app.jar
+COPY /app/target/salon-api-gateway-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
