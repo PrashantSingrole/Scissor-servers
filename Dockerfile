@@ -1,13 +1,11 @@
-FROM eclipse-temurin:17-jdk
+FROM maven:3.8.4-openjdk-17 AS build-stage
 WORKDIR /app
-COPY salon-api-gateway/mvnw .
-COPY salon-api-gateway/mvnw.cmd .
-COPY salon-api-gateway/.mvn .mvn
-COPY salon-api-gateway/pom.xml .
-RUN chmod +x mvnw
-RUN ./mvnw dependency:go-offline
-COPY salon-api-gateway/src ./src
-RUN ./mvnw clean package -DskipTests
-RUN mv target/salon-api-gateway-0.0.1-SNAPSHOT.jar app.jar
+COPY pom.xml .
+RUN mvn dependency:go-offline
+COPY ./src ./src
+RUN mvn clean install -Dmaven.test.skip=true
+FROM openjdk:17-jdk-slim AS product-stage
+WORKDIR /app
+COPY --from=build-stage /app/target/*.jar app.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "/app.jar"]
