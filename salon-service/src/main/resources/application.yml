@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 0
   
 #datasource configuration  
 spring:
@@ -30,7 +30,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://localhost:8761/eureka
+            defaultZone: ${EUREKA_SERVER_URL}
     
     
       
