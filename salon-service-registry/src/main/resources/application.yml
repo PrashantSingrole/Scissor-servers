@@ -8,5 +8,5 @@ eureka:
 
 # default for eureka server
 server:
-  port: 0
+  port: 8761
   
