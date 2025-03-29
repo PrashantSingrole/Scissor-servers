@@ -45,4 +45,4 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: https://scissor-servers.onrender.com/eureka/
+      defaultZone: ${EUREKA_SERVER_URL}
