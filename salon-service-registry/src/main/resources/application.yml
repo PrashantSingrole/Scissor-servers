@@ -1,6 +1,6 @@
 eureka:
   instance:
-    hostname: localhost
+    hostname: scissor-servers.onrender.com
   
   client:
     register-with-eureka: false
