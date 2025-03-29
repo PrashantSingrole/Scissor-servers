@@ -46,3 +46,12 @@ eureka:
     register-with-eureka: true
     service-url:
       defaultZone: ${EUREKA_SERVER_URL}
+    
+  management:
+    endpoints:
+       web:
+         exposure:
+           include: "*"
+      endpoint:
+        health:
+          show-details: always
