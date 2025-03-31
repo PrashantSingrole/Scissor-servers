@@ -8,7 +8,7 @@ eureka:
 
 # default for eureka server
 server:
-  port: 8761
+  port: ${PORT:8761}
   management:
     endpoints:
       web:
