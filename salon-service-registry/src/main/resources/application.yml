@@ -16,5 +16,11 @@ server:
           include: "*"
     endpoint:
       health:
-        show-details: "always"
+        show-details: "always
+    logging:
+      level:
+        root: DEBUG
+        org.springframework.web: DEBUG
+        com.netflix.eureka: DEBUG
+
 
