@@ -13,3 +13,9 @@ public class SalonApiGatewayApplication {
 	}
 
 }
+@Bean
+@LoadBalanced
+public RestTemplate restTemplate() {
+    return new RestTemplate();
+}
+
