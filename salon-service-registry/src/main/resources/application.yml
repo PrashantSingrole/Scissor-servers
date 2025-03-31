@@ -8,7 +8,7 @@ eureka:
 
 # default for eureka server
 server:
-  port: ${PORT:8761}
+  port: 8761
   management:
     endpoints:
       web:
@@ -16,4 +16,10 @@ server:
           include: "*"
     endpoint:
       health:
-        show-details: "always"
+        show-details: "alway
+  logging:
+    level:
+      root: DEBUG
+      org.springframework.web: DEBUG
+      com.netflix.eureka: DEBUG
+
